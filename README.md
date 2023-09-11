@@ -1,12 +1,5 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/your-username/your-laravel-blog-project/actions"><img src="https://github.com/your-username/your-laravel-blog-project/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/your-username/your-laravel-blog-project"><img src="https://img.shields.io/packagist/dt/your-username/your-laravel-blog-project" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/your-username/your-laravel-blog-project"><img src="https://img.shields.io/packagist/v/your-username/your-laravel-blog-project" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/your-username/your-laravel-blog-project"><img src="https://img.shields.io/packagist/l/your-username/your-laravel-blog-project" alt="License"></a>
-</p>
-
 ## About Laravel Blog Project
 
 This Laravel Blog project aims to provide a simple and intuitive platform for blogging, focusing mainly on CRUD operations. You can add, view, edit, and delete posts effortlessly. Built on top of the Laravel framework, this project inherits all the elegant syntax and features of Laravel, including:
