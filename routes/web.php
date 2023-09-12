@@ -34,5 +34,4 @@ Route::get('/posts/{post}', function ($slug) {
     ]);
 
 
-
-})->where('post', '[A-z_\-]+'); // makes the path only be either letters or dashes or underscores.
+});

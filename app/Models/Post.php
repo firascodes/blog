@@ -30,6 +30,7 @@ class Post
 
     public static function all()
     {
+        //caching, collections and composer packages in this example below;
         return cache()->rememberForever('posts.all', function () {
             return collect(File::files(resource_path("posts/")))
                 ->map(fn($file) => YamlFrontMatter::parseFile($file))
@@ -50,10 +51,12 @@ class Post
     public static function find($slug)
     {
         //of all the blog posts, find the one with slug that matches.
-        $posts = static::all();
+        $post = static::all()->firstWhere('slug', $slug);
 
-        return $posts->firstWhere('slug', $slug);
-
+        if (!$post) {
+            throw new ModelNotFoundException();
+        } else
+            return $post;
     }
 
 }
