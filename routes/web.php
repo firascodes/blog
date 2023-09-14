@@ -19,7 +19,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 Route::get('/', function () {
 
 
-    $posts = Post::all();
+    $posts = Post::latest('published_at')->with('category')->get(); //using eager loading 
 
 
     return view('posts', [
