@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel Blog</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
 
 
 </head>
@@ -14,8 +15,8 @@
     <section class="px-8 py-4 bg-black">
         <nav class="flex justify-between">
             <div>
-                <a href="">
-                    <img src="./images/logo1.png" alt="Logo" width="165">
+                <a href="/">
+                    <img src="/images/logo1.png" alt="Logo" width="165">
                 </a>
             </div>
 
@@ -34,7 +35,7 @@
         {{ $slot }}
 
         <footer class="bg-gray-900 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-            <img src="./images/lary-newsletter-icon.png" alt="" class="mx-auto " style="width: 145px;">
+            <img src="/images/lary-newsletter-icon.png" alt="" class="mx-auto " style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
 
@@ -44,7 +45,7 @@
                     <form method="POST" action="#" class="lg:flex text-sm">
                         <div class="lg:py-3 lg:px-5 flex items-center">
                             <label for="email" class="hidden lg:inline-block">
-                                <img src="./images/mailbox-icon.svg" alt="mailbox letter">
+                                <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
 
                             <input id="email" type="text" placeholder="Your email address"
