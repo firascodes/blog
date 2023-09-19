@@ -20,9 +20,12 @@ class Post extends Model
 
 
         if ($filters['search'] ?? false) {
-            $query->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('body', 'like', '%' . request('search') . '%');
+            $query->where(function ($query) {
+                $query->where('title', 'like', '%' . request('search') . '%')
+                    ->orWhere('body', 'like', '%' . request('search') . '%');
+            });
         }
+
 
         $query->when($filters['category'] ?? false, fn($query, $category) =>
             $query
