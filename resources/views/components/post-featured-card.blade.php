@@ -1,7 +1,7 @@
 @props(['post'])
 
 <article
-    class="transition-colors duration-300 hover:bg-blue-900 bg-gray-900 border border-gray-600 border-opacity-0 hover:border-opacity-5 rounded-xl">
+    class="transition-colors duration-300 hover:bg-gray-800 bg-gray-900 border border-gray-600 border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5 lg:flex">
         <div class="flex-1 lg:mr-8">
             <img src="/images/illustration-1.png" alt="Illustration">
@@ -47,7 +47,7 @@
 
                 <div class="hidden lg:block">
                     <a href="/posts/{{$post->slug}}"
-                        class="transition-colors duration-300 text-xs font-semibold bg-blue-400 hover:bg-blue-600 rounded-full py-2 px-8">Read
+                        class="transition-colors duration-300 text-xs font-semibold bg-blue-600 hover:bg-blue-700 rounded-full py-2 px-8">Read
                         More</a>
                 </div>
             </footer>

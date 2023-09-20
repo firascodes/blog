@@ -16,10 +16,11 @@
 
     <x-dropdown-item href="/?{{http_build_query(request()->except('category','page'))}}">All</x-dropdown-item>
     @foreach ($categories as $category)
-
     <x-dropdown-item href="/?category={{$category->slug}}&{{http_build_query(request()->except('category','page'))}}"
-        :active="request()->is(`categories/.{$category-> 
-        slug}`)" class="block text-left px-3 text-sm hover:bg-blue-300 focus:bg-blue-300">
-        {{ucwords($category->name)}}</x-dropdown-item>
+        :active="request()->is('categories/' . $category->slug)"
+        class="block text-left px-3 text-sm hover:bg-blue-300 focus:bg-blue-300">
+        {{ucwords($category->name)}}
+    </x-dropdown-item>
     @endforeach
+
 </x-dropdown>
