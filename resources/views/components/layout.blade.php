@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel Blog</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
 
 
@@ -22,10 +22,10 @@
 
 
             <div>
-                <a href="" class="px-3 text-white">Home</a>
-                <a href="" class="px-3 text-white">About Us</a>
-                <a href=""
-                    class="text-white bg-blue-600 rounded-full font-semibold uppercase text-xs px-3 py-1">Subscribe
+                <a href="/register"
+                    class="px-4 text-white bg-blue-800 rounded-full uppercase font-semibold py-1 mx-2">Register</a>
+                {{-- <a href="" class="px-3 text-white">About Us</a> --}}
+                <a href="" class="text-white bg-gray-800 rounded-full font-semibold uppercase px-3 py-1 ">Subscribe
                     For
                     More!</a>
             </div>
@@ -66,6 +66,7 @@
 
     </section>
 
+    <x-flash />
 
 
 
