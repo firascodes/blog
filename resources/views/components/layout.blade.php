@@ -21,9 +21,21 @@
             </div>
 
 
-            <div>
+            <div class="mt-5 md:mt-0 flex items-center">
+                @auth
+                <span class="px-4 text-white bg-green-600 rounded-full uppercase font-semibold py-1 mx-2">Hi,
+                    {{auth()->user()->name}}!</span>
+                <form action="/logout" method="POST" class="font-semibold  mx-3">
+                    @csrf
+                    <button type="submit">Log Out</button>
+                </form>
+                @else
                 <a href="/register"
                     class="px-4 text-white bg-blue-800 rounded-full uppercase font-semibold py-1 mx-2">Register</a>
+                <a href="/login"
+                    class="px-4 text-white bg-blue-800 rounded-full uppercase font-semibold py-1 mx-2 mr-1">Log
+                    In</a>
+                @endauth
                 {{-- <a href="" class="px-3 text-white">About Us</a> --}}
                 <a href="" class="text-white bg-gray-800 rounded-full font-semibold uppercase px-3 py-1 ">Subscribe
                     For
