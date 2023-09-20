@@ -32,12 +32,11 @@
                 @else
                 <a href="/register"
                     class="px-4 text-white bg-blue-800 rounded-full uppercase font-semibold py-1 mx-2">Register</a>
-                <a href="/login"
-                    class="px-4 text-white bg-blue-800 rounded-full uppercase font-semibold py-1 mx-2 mr-1">Log
+                <a href="/login" class="px-4 text-white bg-blue-600 rounded-full uppercase font-semibold py-1 mx-2 ">Log
                     In</a>
                 @endauth
                 {{-- <a href="" class="px-3 text-white">About Us</a> --}}
-                <a href="" class="text-white bg-gray-800 rounded-full font-semibold uppercase px-3 py-1 ">Subscribe
+                <a href="" class="text-white bg-gray-800 rounded-full font-semibold uppercase px-3 py-1 mx-2 ">Subscribe
                     For
                     More!</a>
             </div>
