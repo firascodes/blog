@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Comment extends Model
 {
     use HasFactory;
-
-
     public function post() //laravel will guess the column = post_id
     {
         return $this->belongsTo(Post::class);
