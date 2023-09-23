@@ -46,7 +46,8 @@
 
                 <div class="hidden lg:block">
                     <a href="/posts/{{$post->slug}}"
-                        class="transition-colors duration-300 text-xs font-semibold bg-blue-600 hover:bg-blue-700 rounded-full py-2 px-8">Read
+                        class="whitespace-nowrap transition-colors duration-300 text-xs font-semibold bg-blue-600 hover:bg-blue-700 rounded-full py-2 px-8">Read
+
                         More</a>
                 </div>
             </footer>
