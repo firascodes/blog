@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +42,8 @@
                     In</a>
                 @endauth
                 {{-- <a href="" class="px-3 text-white">About Us</a> --}}
-                <a href="" class="text-white bg-gray-800 rounded-full font-semibold uppercase px-3 py-1 mx-2 ">Subscribe
+                <a href="#newsletter"
+                    class="text-white bg-gray-800 rounded-full font-semibold uppercase px-3 py-1 mx-2 ">Subscribe
                     For
                     More!</a>
             </div>
@@ -45,7 +52,8 @@
 
         {{ $slot }}
 
-        <footer class="bg-gray-900 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+        <footer id="newsletter"
+            class="bg-gray-900 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
             <img src="/images/lary-newsletter-icon.png" alt="" class="mx-auto " style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
@@ -53,15 +61,23 @@
             <div class="mt-10">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
 
-                    <form method="POST" action="#" class="lg:flex text-sm">
+                    <form method="POST" action="/newsletter" class="lg:flex text-sm">
+                        @csrf
                         <div class="lg:py-3 lg:px-5 flex items-center">
                             <label for="email" class="hidden lg:inline-block">
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
 
-                            <input id="email" type="text" placeholder="Your email address"
-                                class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none text-blue-600 focus:border-gray-300 border border-transparent">
+                            <div>
 
+                                <input name="email" id="email" type="text" placeholder="Your email address"
+                                    class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none text-blue-600 focus:border-gray-300 border border-transparent">
+
+                                @error('email')
+                                <span class="text-xs text-red-500">{{$message}}</span>
+                                @enderror
+
+                            </div>
                         </div>
 
                         <button type="submit"
