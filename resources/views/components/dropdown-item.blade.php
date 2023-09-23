@@ -1,10 +1,10 @@
 @props(['active' =>false])
 
 @php
-$classes = 'block text-left px-3 text-sm hover:bg-blue-300 focus:bg-blue-300';
+$classes = 'block text-left px-3 text-sm hover:bg-gray-300 focus:bg-gray-300 text-blue-700 ';
 
 if ($active) {
-$classes .= 'bg-blue-300 text-white';
+$classes .= 'bg-blue-200 text-white';
 }
 @endphp
 

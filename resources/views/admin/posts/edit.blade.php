@@ -1,0 +1,105 @@
+<x-layout>
+    <div class="mx-auto text-center mt-4">
+        <h1 class="text-2xl font-bold mb-4">Edit the Post "{{$post->title}}"</h1>
+    </div>
+    <section class="py-8 max-w-md mx-auto">
+        <div class="border border-gray-200 p-6 rounded-xl ">
+            <form action="/admin/posts/{{$post->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                @method('PATCH')
+
+                <div class="mb-6">
+                    <label for="title" class="block mb-2 uppercase font-bold ">
+                        Title
+                    </label>
+                    <input type="text" name="title" id="title" value="{{old('title',$post->title)}}"
+                        class="text-black border border-gray-800 p-2 w-full">
+                    @error('title')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
+                </div>
+                <div class="mb-6">
+                    <label for="slug" class="block mb-2 uppercase font-bold ">
+                        slug
+                    </label>
+                    <input type="text" name="slug" id="slug" value="{{old('slug',$post->slug)}}"
+                        class="text-black border border-gray-800 p-2 w-full">
+                    @error('slug')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
+                </div>
+
+                <div class="mb-6">
+                    <label for="thumbnail" class="block mb-2 uppercase font-bold ">
+                        thumbnail
+                    </label>
+                    <input type="file" name="thumbnail" id="thumbnail" value="{{old('thumbnail',$post->thumbnail)}}"
+                        class="text-black border border-gray-800 p-2 w-full bg-white">
+                    <img src="/storage/{{$post->thumbnail}}" alt="" class="rounded-xl mt-4 width-50">
+
+                    @error('thumbnail')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
+                </div>
+
+                <div class="mb-6">
+                    <label for="excerpt" class="block mb-2 uppercase font-bold ">
+                        Excerpt
+                    </label>
+                    <textarea type="text" name="excerpt" id="excerpt"
+                        class="text-black border border-gray-800 p-2 w-full">{{old('excerpt',$post->excerpt)}}</textarea>
+                    @error('excerpt')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
+                </div>
+                <div class="mb-6">
+                    <label for="body" class="block mb-2 uppercase font-bold ">
+                        Body
+                    </label>
+                    <textarea type="text" name="body" id="body"
+                        class="text-black border border-gray-800 p-2 w-full">{{old('body',$post->body)}}</textarea>
+                    @error('body')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
+                </div>
+
+                <div class="mb-6">
+                    <label for="category_id" class="block mb-2 uppercase font-bold ">
+                        category
+                    </label>
+                    <select name="category_id" id="category_id" class="text-black px-2 py-2 rounded-xl">
+
+                        @php
+                        $categories = \App\Models\Category::all();
+                        @endphp
+
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}" {{old('category_id',$post->category_id)==$category->id ?
+                            'selected' :
+                            ''}}>{{ucwords($category->name)}}</option>
+                        @endforeach
+
+                    </select>
+                    @error('category')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
+                </div>
+
+
+
+                <div class="mb-6">
+                    <button type="submit" class="bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-600">
+                        Publish
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</x-layout>
