@@ -4,7 +4,7 @@
     border-gray-600 border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-6 px-5">
         <div class="flex-1 lg:mr-8">
-            <img src="/images/illustration-1.png" alt="Illustration">
+            <img src="/storage/{{$post->thumbnail}}" alt="Illustration">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">

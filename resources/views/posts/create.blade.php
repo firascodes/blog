@@ -2,7 +2,7 @@
     <section class="py-8 max-w-md mx-auto">
         <h1 class="text-lg font-bold mb-4">Publish New Post!</h1>
         <div class="border border-gray-200 p-6 rounded-xl ">
-            <form action="/admin/posts" method="POST">
+            <form action="/admin/posts" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-6">
                     <label for="title" class="block mb-2 uppercase font-bold ">
