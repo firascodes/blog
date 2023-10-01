@@ -16,8 +16,8 @@ class MustBeAdministrator
     public function handle(Request $request, Closure $next): Response
     {
 
-        if (auth()->user()?->username != 'admin') {
-            abort(403); //or symfony response
+        if (!auth()->user()?->isAdmin()) {
+            abort(403, 'You are not Admin!');
         }
 
         return $next($request);
