@@ -1,4 +1,14 @@
 <x-layout>
+    <script src="https://cdn.tiny.cloud/1/bce5c3zhyxmz26qhi6tq55vuzew3vshlvtalf5xoqn5oyhly/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea', // Change this value according to your HTML
+            plugins: 'link code emoticons image link lists media searchreplace table visualblocks wordcount checklist',
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright | outdent indent | link code | emoticons charmap',
+            // Optional: Add more configurations and plugins as needed.
+        });
+    </script>
     <div class="mx-auto text-center mt-4">
         <h1 class="text-2xl font-bold mb-4">Edit the Post "{{$post->title}}"</h1>
     </div>

@@ -31,14 +31,18 @@
                 @auth
                 <x-dropdown>
                     <x-slot name="trigger">
-                        <button class="px-4 text-white bg-green-600 rounded-full uppercase font-semibold py-1 mx-2">Hi,
+                        <button
+                            class="px-4 text-white rounded-full uppercase font-semibold py-1 mx-2 {{auth()->user()->isAdmin() ? "
+                            bg-red-600" : "bg-green-600" }}">Hi,
                             {{auth()->user()->name}}!</button>
                     </x-slot>
                     <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">Create
                         Post
                     </x-dropdown-item>
+                    @if(auth()->check() && auth()->user()->isAdmin())
                     <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Dashboard
                     </x-dropdown-item>
+                    @endif
                     <x-dropdown-item href="#" x-data="{}"
                         @click.prevent="document.querySelector('#logout-form').submit()">Log
                         Out</x-dropdown-item>
