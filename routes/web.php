@@ -48,8 +48,8 @@ Route::get('authors/{author:username}', function (User $author) {
 
 });
 
-Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');
-Route::post('admin/posts/', [PostController::class, 'store'])->middleware('admin');
+Route::get('admin/posts/create', [PostController::class, 'create']);
+Route::post('admin/posts/', [PostController::class, 'store']);
 
 
 Route::get('admin/posts/', [AdminPostController::class, 'index'])->middleware('admin');
