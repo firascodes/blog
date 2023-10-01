@@ -23,6 +23,10 @@ class RegisterController extends Controller
             'password' => 'required|min:7|max:255'
         ]);
 
+        $attributes['name'] = strip_tags($attributes['name']);
+        $attributes['username'] = strip_tags($attributes['username']);
+        $attributes['email'] = strip_tags($attributes['email']);
+
         $user = User::create($attributes);
 
         auth()->login($user);
