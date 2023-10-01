@@ -16,12 +16,12 @@ class Post extends Model
         //use $query->when() method
 
 
-        if ($filters['search'] ?? false) {
-            $query->where(function ($query) {
-                $query->where('title', 'like', '%' . request('search') . '%')
-                    ->orWhere('body', 'like', '%' . request('search') . '%');
+        $query->when($filters['search'] ?? false, function ($query, $searchTerm) {
+            $query->where(function ($query) use ($searchTerm) {
+                $query->where('title', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('body', 'like', '%' . $searchTerm . '%');
             });
-        }
+        });
 
 
         $query->when($filters['category'] ?? false, fn($query, $category) =>
